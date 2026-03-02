@@ -57,3 +57,14 @@ const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+app.get('/test-db', async (req, res) => {
+  const session = driver.session();
+  try {
+    const result = await session.run('RETURN "Database Connected" AS message');
+    res.json(result.records[0].get('message'));
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  } finally {
+    await session.close();
+  }
+});
