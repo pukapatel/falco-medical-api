@@ -1,0 +1,15 @@
+{
+  "name": "falco-medical-api",
+  "version": "1.0.0",
+  "description": "FALCO Intelligent Medical Knowledge Navigation Backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "neo4j-driver": "^5.18.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5"
+  }
+}
